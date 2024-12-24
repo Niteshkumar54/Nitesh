@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎄 Merry Christmas 🎄</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mountain+Magic&display=swap" rel="stylesheet">
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Full-screen background with animated gradient */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(45deg, #ff6347, #ff8c00, #ffcc00, #f7ff7e); /* Bright Christmas colors */
+      background-size: 600% 600%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: gradientAnimation 20s ease infinite;
+    }
+
+    /* Smooth animated gradient effect */
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Snowflakes animation */
+    .snowflakes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .snowflake {
+      position: absolute;
+      color: #fff;
+      font-size: 2rem;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px); }
+      100% { transform: translateY(100vh); }
+    }
+
+    /* Slide-in container for asking name */
+    .slide-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      max-width: 500px;
+      text-align: center;
+      background-color: rgba(255, 99, 71, 0.8); /* Semi-transparent red */
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: slideIn 1s ease-out;
+      z-index: 10;
+    }
+
+    /* Slide-in effect */
+    @keyframes slideIn {
+      0% { transform: translate(-50%, -50%) translateY(-100%); }
+      100% { transform: translate(-50%, -50%) translateY(0); }
+    }
+
+    /* Input field and button styling */
+    .input-field {
+      padding: 12px;
+      font-size: 1.5rem;
+      width: 80%;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      text-align: center;
+      background-color: #fff;
+      color: #2d3d44;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-field:focus {
+      border: 2px solid #ffcc00;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+    }
+
+    .submit-btn {
+      padding: 15px 25px;
+      background-color: #ffcc00;
+      color: white;
+      border: none;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .submit-btn:hover {
+      background-color: #c13f2a;
+      transform: scale(1.1);
+    }
+
+    /* Christmas Greeting with glowing effect */
+    .christmas-greeting {
+      font-size: 3rem;
+      color: #ffcc00;
+      margin-top: 50px;
+      animation: fadeIn 1.5s ease-in-out, glow 1.5s infinite alternate;
+      font-family: 'Mountain Magic', cursive;
+      text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+    }
+
+    /* Animation for fading text */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Glow effect for Christmas greeting */
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00; }
+      100% { text-shadow: 0 0 20px #ff6347, 0 0 40px #ff6347, 0 0 60px #ff6347; }
+    }
+
+    /* Updated Christmas Day Wishes */
+    .great-wishes {
+      font-size: 1.8rem;
+      margin-top: 20px;
+      color: white;
+      animation: fadeIn 2s ease-in-out;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Footer styling */
+    .footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .footer span {
+      color: #FF8C00;
+      font-weight: bold;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Snowflakes -->
+  <div class="snowflakes">
+    <span class="snowflake" style="left: 10%; animation-duration: 8s;">❄️</span>
+    <span class="snowflake" style="left: 25%; animation-duration: 9s;">❄️</span>
+    <span class="snowflake" style="left: 50%; animation-duration: 7s;">❄️</span>
+    <span class="snowflake" style="left: 75%; animation-duration: 8s;">❄️</span>
+    <span class="snowflake" style="left: 90%; animation-duration: 10s;">❄️</span>
+  </div>
+
+  <!-- Slide-In container for Name Input -->
+  <div id="slide-container" class="slide-container">
+    <h2>🎄 Merry Christmas! 🎄</h2>
+    <input type="text" class="input-field" placeholder="Enter your name..." id="name">
+    <button class="submit-btn" onclick="greetUser()">Submit</button>
+  </div>
+
+  <!-- Christmas Greeting -->
+  <div id="greeting-container" style="display: none;">
+    <h2 class="christmas-greeting">🎄 Merry Christmas! 🎄</h2>
+    <p class="great-wishes">May the wonder and magic of Christmas brighten every corner of your life. Wishing you peace, joy, and love this holiday season!</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Made with ❤️ by <span style="color: #FF8C00; font-weight: bold;">Nitesh</span>
+  </div>
+
+  <script>
+    function greetUser() {
+      let name = document.getElementById('name').value;
+      if (name) {
+        document.getElementById('slide-container').style.display = 'none';
+        document.getElementById('greeting-container').style.display = 'block';
+        document.querySelector('.christmas-greeting').innerHTML = `🎄 Merry Christmas, ${name}! 🎄`;
+      }
+    }
+  </script>
+
+</body>
+</html>
