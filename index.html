@@ -102,6 +102,12 @@
       box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
     }
 
+    /* Placeholder text styling */
+    .input-field::placeholder {
+      color: #bbb;
+      font-size: 1rem; /* Smaller font size for the placeholder */
+    }
+
     .submit-btn {
       padding: 15px 25px;
       background-color: #ffcc00;
@@ -152,12 +158,13 @@
 
     /* Footer styling */
     .footer {
-      position: absolute;
-      bottom: 10px;
+      position: fixed;
+      bottom: 20px; /* Slightly lifts the footer above the bottom */
       width: 100%;
       text-align: center;
       color: white;
       font-size: 1.2rem;
+      z-index: 100; /* Ensure it's above other content */
     }
 
     .footer span {
